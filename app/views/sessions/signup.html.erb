@@ -1,10 +1,22 @@
-<h1>Sessions#signup</h1>
-<p>Find me in app/views/sessions/signup.html.erb</p>
-<div>
-  <%= form_for(:user , url:"/signup") do |form|%>
-    <%= form.text_field :name, placeholder: 'Name' %>
-    <%= form.email_field :email, placeholder: 'Your email' %>
-    <%= form.password_field :password, placeholder: 'Password' %>
-    <%= form.submit "Submit"%>
-  <% end%>
+<div class="min-h-full flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8">
+    <div>
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        Create a new account
+      </h2>
+    </div>
+    <%= form_for(:user , url:"/signup") do |form|%>
+      <%= form.text_field :name, :required => true, placeholder: 'Name' ,class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+      <%= form.email_field :email,:required => true, placeholder: 'Your email', class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'  %>
+      <%= form.password_field :password,:required => true, placeholder: 'Password', class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm' %>
+      <%= form.submit "Submit",  class: 'group my-6 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' %>
+    <% end%>
+    <div class="flex items-center justify-center">
+      <div class="text-sm text-gray-900 mr-2" >Already have an account</div>
+      <div class="text-sm">
+        <a href="/" class="font-medium text-indigo-600 hover:text-indigo-500">
+          Login</a>
+      </div>
+    </div>
+  </div>
 </div>
