@@ -4,7 +4,7 @@
       <div class="px-6">
         <div class="flex flex-wrap justify-center mb-10">
           <% if profile.avatar.attached? %>
-            <%= image_tag profile.avatar ,tyle:"max-width:200px", 
+            <%= image_tag profile.avatar ,style:"max-width:200px; max-height:200px", 
                         class: "shadow-xl rounded-full absolute w-1/2 transform -translate-y-1/2" %>
           <% else %>
             <%= image_tag gravatar_url_for(current_user), 

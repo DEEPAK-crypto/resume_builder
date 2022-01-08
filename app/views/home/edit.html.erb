@@ -10,14 +10,20 @@
       <%= f.text_field :name, value: @profile.name || current_user.name, placeholder: "Name" %><br/>
       <div class="flex items-center my-4">
         <% if @profile.avatar.attached? %>
-          <%= image_tag @profile.avatar ,style:"max-width:200px"%>
+          <%= image_tag @profile.avatar ,style:"max-width:200px; max-height:200px"%>
         <% else %>
           <%= image_tag gravatar_url_for(current_user), 
                     id: "image-preview", style:"max-width:200px"
                 %>
         <% end%>
-        <%= f.label :avatar,"Upload profile image" %>
-        <%= f.file_field :avatar%>
+      </div>
+      <div class="my-4">
+        <label class="flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200">
+          Upload Image
+          <span style="display:none;">
+            <%= f.file_field :avatar, id: "imageUploadBtn" ,accept:'image/png,image/jpeg' %>
+          </span>
+        </label>
       </div>
       <%= f.text_field :job_title, value: @profile.job_title, placeholder: "Job title" %><br/>
       <%= f.text_field :total_experience, value: @profile.total_experience, placeholder: "Total experience" %><br/>
