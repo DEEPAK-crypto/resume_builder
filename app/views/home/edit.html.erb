@@ -3,6 +3,7 @@
   <%= form_for(@profile, builder: TailwindInputBuilder) do |f| %>
     <div class="flex justify-end items-center w-full mb-4">
       <div>
+        <button id="copyBtn"  class="flex-shrink-0 mr-2 px-4 py-2 text-base font-semibold text-white bg-purple-600 rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200"> Copy link </button>
         <%= f.submit "Save", class: "flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-200" %><br/>
       </div>
     </div>
@@ -46,3 +47,12 @@
     <% end %>
   <% end %>
 </main>
+<script>
+  var copyBtn = document.getElementById("copyBtn");
+  copyBtn.addEventListener("click",function(e){
+  var copyLink = window.location.origin + "/getprofile/?id=" + <%= @profile.id%>;
+     navigator.clipboard.writeText(copyLink);
+     copyBtn.innerHTML = "Copied!"
+     e.preventDefault();
+  })
+</script>

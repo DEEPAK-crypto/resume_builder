@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post   'signup'  => 'sessions#signupsubmit'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-
+  get    'getprofile/' => 'profile#profile'
   resources :profiles , only: [:update]
   resources :educations , only: [:new]
 end
