@@ -10,6 +10,5 @@ class User < ApplicationRecord
 
     # adds password fields
     has_secure_password
-
     has_one :profile, dependent: :destroy
 end
