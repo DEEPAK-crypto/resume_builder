@@ -1,5 +1,11 @@
 # Flexiple Assignment
 
+## Tasks Completed
+
+-  User sign up
+- Change profile image
+- Unique public URL for resume that can be shared with everyone
+
 ## Tech stack for this app
 
 - RoR
@@ -17,3 +23,4 @@ rake db:seed
 Email: `johndoe@example.com`
 Password: `password`
 # resume_builder
+
